@@ -7,7 +7,7 @@ import time
 class Bot:
     # Define os diretórios do driver, cache do navegador e pasta de midia.
     dir_path = os.getcwd()
-    chromedriver = dir_path + "/driver/chromedriver"
+    chromedriver = dir_path + "/driver/chromedriver" #<-- Informe seu arquivo chromedriver Ex: /driver/chromedriver.exe
     dir_cache = dir_path + "/cache/bot/"
     dir_img = dir_path + "/midia/bot/"
 
@@ -117,12 +117,12 @@ class Bot:
 
                     elif msg == "/catálogo" or msg == "/catalogo":
                         self.enviar_mensagem(nome, "Ok! Aqui está :)")
-                        self.enviar_midia(nome, "py-whatsmsg-bot.png")
+                        self.enviar_midia(nome, "py-whatsmsg-bot.png") #<--- Informe seu arquivo de mídia para que seja enviado automaticamente.
                         self.chrome.find_element_by_xpath('//*[@id="pane-side"]/div[1]/div/div/div[11]/div/div/div/div[2]/div[2]/div[2]/span[1]/div/span').click()
                         time.sleep(5)
 
                     else:
-                        self.enviar_mensagem(nome, """Olá eu sou o PyWhatsMsg_Bot! :robot""" + Keys.ENTER + Keys.SPACE + " "
+                        self.enviar_mensagem(nome, """Olá eu sou o Py-WhatsMsg-Bot! :robot""" + Keys.ENTER + Keys.SPACE + " "
                                                     """\n digite */ajuda* para ver as opções.""")
                         time.sleep(3)
                         self.chrome.find_element_by_xpath('//*[@id="main"]/footer/div[1]/div[3]/button/span').click()
